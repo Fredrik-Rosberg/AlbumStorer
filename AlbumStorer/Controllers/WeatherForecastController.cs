@@ -17,7 +17,7 @@ namespace AlbumStorer.Controllers
         {
             _logger = logger;
         }
-
+        fghgfhsghdg
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
