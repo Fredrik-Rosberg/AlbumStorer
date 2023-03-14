@@ -1,27 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fredr\\source\\repos\\AlbumStorer\\AlbumStorer.csproj": {}
+    "C:\\Users\\alexu\\OneDrive\\Skrivbord\\AlbumStorer projekt\\AlbumStorer\\AlbumStorer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fredr\\source\\repos\\AlbumStorer\\AlbumStorer.csproj": {
+    "C:\\Users\\alexu\\OneDrive\\Skrivbord\\AlbumStorer projekt\\AlbumStorer\\AlbumStorer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fredr\\source\\repos\\AlbumStorer\\AlbumStorer.csproj",
+        "projectUniqueName": "C:\\Users\\alexu\\OneDrive\\Skrivbord\\AlbumStorer projekt\\AlbumStorer\\AlbumStorer.csproj",
         "projectName": "AlbumStorer",
-        "projectPath": "C:\\Users\\fredr\\source\\repos\\AlbumStorer\\AlbumStorer.csproj",
-        "packagesPath": "C:\\Users\\fredr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fredr\\source\\repos\\AlbumStorer\\obj\\",
+        "projectPath": "C:\\Users\\alexu\\OneDrive\\Skrivbord\\AlbumStorer projekt\\AlbumStorer\\AlbumStorer.csproj",
+        "packagesPath": "C:\\Users\\alexu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexu\\OneDrive\\Skrivbord\\AlbumStorer projekt\\AlbumStorer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\fredr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\alexu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -50,6 +44,30 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -74,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
