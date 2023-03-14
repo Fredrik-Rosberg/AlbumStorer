@@ -29,7 +29,7 @@ namespace AlbumStorer.Repositories
         public async Task<Artist> GetArtist(int artistId)
         {
             Artist artist = _context.Artists.Find(artistId);
-            return artist == null ? throw new ArgumentException("Cant find artist") : artist; 
+            return artist == null ? throw new ArgumentException("Artist not found") : artist; 
         }
 
         public Task<Artist> UpdateArtist(int artistId)
