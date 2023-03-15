@@ -3,6 +3,7 @@ using System;
 using AlbumStorer.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlbumStorer.Migrations
 {
     [DbContext(typeof(RecordsDbContext))]
-    partial class RecordsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230315143520_addedAlbumToArtist")]
+    partial class addedAlbumToArtist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.3");
@@ -64,7 +67,7 @@ namespace AlbumStorer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AlbumId")
+                    b.Property<int?>("AlbumId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Length")
@@ -94,13 +97,9 @@ namespace AlbumStorer.Migrations
 
             modelBuilder.Entity("AlbumStorer.DbEntities.Song", b =>
                 {
-                    b.HasOne("AlbumStorer.DbEntities.Album", "Album")
+                    b.HasOne("AlbumStorer.DbEntities.Album", null)
                         .WithMany("Songs")
-                        .HasForeignKey("AlbumId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Album");
+                        .HasForeignKey("AlbumId");
                 });
 
             modelBuilder.Entity("AlbumStorer.DbEntities.Album", b =>

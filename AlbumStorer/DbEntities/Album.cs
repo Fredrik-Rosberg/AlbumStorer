@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace AlbumStorer.DbEntities
 {
@@ -11,6 +12,7 @@ namespace AlbumStorer.DbEntities
 
         [ForeignKey(nameof(Artist))]
         public int ArtistId { get; set; }
+        [JsonIgnore]
         public Artist Artist { get; set; }
 
 

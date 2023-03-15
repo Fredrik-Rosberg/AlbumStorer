@@ -7,7 +7,9 @@ namespace AlbumStorer.ServiceInterfaces
         Task<Artist> GetArtist(int artistId);
         Task<Artist[]> GetAllArtists();
         Task<Artist> UpdateArtist(int artistId);
-        Task DeleteArtist(int artistId);
+        Task<string> DeleteArtist(int artistId);
+
+        Task<Artist> AddArtist(Artist newArtist);
 
     }
 }

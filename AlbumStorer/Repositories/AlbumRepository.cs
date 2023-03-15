@@ -16,7 +16,9 @@ namespace AlbumStorer.Repositories
 
         public async Task<Album> GetAlbum(int albumId)
         {
-            var album = _context.Albums.Include(a => a.Artist).Where(a => a.Id == albumId).FirstOrDefault();
+            var album = _context.Albums.Where(a => a.Id == albumId)
+                .Include(a => a.Songs)
+                .FirstOrDefault();
             return album;
         }
 
@@ -48,6 +50,19 @@ namespace AlbumStorer.Repositories
             Album album = new Album() { Id = dto.Id, ArtistId = dto.ArtistId, Songs = dto.Songs, Title = dto.Title, Rating = dto.Rating };
             return album;
         }
+
+        //public async Task<int> UpdateAlbumRating(List<Song> songs)
+        //{
+        //    int songsRatings = 0;
+
+        //    foreach (var song in songs)
+        //    {
+        //        songsRatings += song.Rating;
+        //    }
+
+        //    int albumrating = songsRatings / songs.Count();
+        //    return albumrating;
+        //}
 
     }
 }

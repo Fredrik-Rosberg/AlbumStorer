@@ -13,23 +13,27 @@ namespace AlbumStorer.Controllers
     [ApiController]
     public class ArtistController : ControllerBase
     {
-        private readonly RecordsDbContext _context;
         private readonly IArtistRepository _artistRepository;
 
-        public ArtistController(RecordsDbContext context, IArtistRepository artistRepository)
+        public ArtistController(IArtistRepository artistRepository)
         {
-            _context = context;
             _artistRepository = artistRepository;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetArtist(int artistId)
+        //[HttpGet]
+        //public async Task<string> GetSpotify()
+        //{
+        //    SpotifyTest test = new SpotifyTest();
+        //    var result = await test.GetSpotifyAlbum();
+        //    return result;
+        //}
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetArtist(int id)
         {
-            //var artist = _context.Artists.Find(artistId);
-            //return artist == null ? NotFound() : Ok(artist);
             try
             {
-                var result = await _artistRepository.GetArtist(artistId);
+                var result = await _artistRepository.GetArtist(id);
                 return Ok(result);
             }
             catch (ArgumentException ex) { 
@@ -42,23 +46,20 @@ namespace AlbumStorer.Controllers
         [HttpPost]
         public async Task<IActionResult> AddArtist([FromBody] Artist updatedArtist)
         {
-            var artist = await _context.Artists.AddAsync(updatedArtist);
-            await _context.SaveChangesAsync();
-
-            return artist == null ? BadRequest() : Ok(artist);
+            var artist = await _artistRepository.AddArtist(updatedArtist);
+            if (artist is null)
+            {
+                return BadRequest("Something went wrong");
+            }
+            return Ok(artist);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteArtist(int artistId)
+        [HttpDelete("{id}")]
+        public async Task<string> DeleteArtist(int id)
         {
-            var artist = _context.Artists.Find(artistId);
-            if(artist == null)
-            {
-                return NotFound();
-            }
-            _context.Artists.Remove(artist);
-            await _context.SaveChangesAsync();
-            return Ok(artist);
+            var message = await _artistRepository.DeleteArtist(id);
+            
+            return message;
         }
     }
 }
